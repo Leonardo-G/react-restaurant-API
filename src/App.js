@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { useState } from "react";
+import { ConsumoContainer } from "./components/ConsumoContainer";
+import { FormularioContainer } from "./components/FormularioContainer";
+import { Header } from "./components/Header";
+import { ClientesContext } from "./contexrt/ClientesContext";
 
 function App() {
+
+  const [pedidoActivo, setPedidoActivo] = useState(false)
+
+  const [cliente, setCliente] = useState({  
+    mesa: "",
+    hora: "",
+    pedido: []
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ClientesContext.Provider value={{ cliente, setCliente, setPedidoActivo }}>
+      <Header />
+      <FormularioContainer/>
+      {
+        pedidoActivo && 
+        <ConsumoContainer />
+      }
+    </ClientesContext.Provider>
   );
 }
 

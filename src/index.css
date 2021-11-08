@@ -1,13 +1,173 @@
-body {
+*, *::after, *::before{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: "Robot", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html{
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.header{
+  width: 100%;
+  background-color: #201C2B;
+}
+
+.header h1{
+  padding: 2rem;
+  text-align: center;
+  font-size: 3rem;
+  color: #fff;
+  font-weight: 400;
+}
+
+.nuevaOrden{
+  width: 100%;
+  text-align: center;
+  margin-top: 3.5rem;
+}
+
+.btn{
+  padding: 1rem 1.5rem;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  background-color: #E95150;
+  border-radius: 7.5px;
+}
+
+.btn--nuevaOrden{
+  width: 15rem;
+}
+
+.btn--nuevaOrden:hover{
+  background-color: #e95050ab;  
+}
+
+.icon--added{
+  transform: translateX(-100%);
+  visibility: hidden;
+  font-size: 0;
+  transition: .2s ease;
+}
+
+.btn--nuevaOrden:hover .icon--added{
+  margin-left: 1rem;
+  transform: translateX(0%);
+  visibility: visible;
+  font-size: 1rem;
+  transition: .2s  ease;
+}
+
+/* Formulario */
+
+.fondoVentana{
+  background-color: #201c2b6e;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.ventana h2{
+  font-size: 3rem;
+}
+
+.ventana{
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  padding: 2rem;
+}
+
+.ventana__cabezado{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0 3rem 0;
+}
+
+.icon--close{
+  font-size: 2rem;
+  color: #201c2b81;
+  cursor: pointer;
+}
+
+.formulario{
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  width: 40rem;
+  border-radius: 7.5px;
+}
+
+.formulario__fila{
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.formulario__fila:last-of-type{
+  margin-top: 1rem;
+}
+
+.formulario label{
+  font-size: 1.6rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+.formulario input{
+  padding: 0.5rem 1.5rem;
+  border: 0.5px solid rgb(201, 199, 199);
+}
+
+.ventana__btns{
+  float: right;
+  margin-top: 3.5rem;
+}
+
+.ventana__btns .btn--create{
+  margin-left: 1rem;
+}
+
+.btn--close{
+  background-color: #e95050ab; 
+}
+
+/* Error */
+.error{
+  color: #fff;
+  background-color: #E95150;
+  padding: 1rem;
+  text-align: center;
+  margin: 1rem auto;
+}
+
+/* Platillos */
+.container{
+  margin: 3rem auto;
+  width: min(90%, 120rem);
+}
+
+.orden__seccion{
+  background-color: #EBEBEA;
+  width: 100%;
+  text-align: center;
+  padding: 3rem;
+}
+
+.orden__seccion h2{
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.orden__seccion:last-of-type{
+  margin-top: 4rem;
 }
